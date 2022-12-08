@@ -1,4 +1,4 @@
-.signup {
+.signIn {
     background-color: #fdfdfd;
     border-radius: 15px;
     border: 1px solid #dadce0;
@@ -13,5 +13,5 @@ img {
     width: 100px;
 }
 .acc{
-    font-weight: bold;
+    font-weight: 900;
 }

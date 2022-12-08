@@ -1,0 +1,22 @@
+.contents {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 3.15%;
+} 
+span {
+    margin-left:1% ;
+    font-size:16px;
+    font-weight: 400;
+    font-family: poppins;
+}
+.img {
+    width: 60px;
+    margin:21px 0px 30px 12px;
+}
+/* .contents:hover {
+    width: 10%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #F3F4F5;
+}
+ */
