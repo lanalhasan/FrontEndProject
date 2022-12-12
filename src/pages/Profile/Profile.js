@@ -1,15 +1,15 @@
 import Navbar from '../../components/NavBar/Navbar'
-import TimeLine from '../../components/TimeLine/Timeline'
+import Information from '../../components/Information/Information'
 
-const Home = () => {
+const Profile = () => {
     return (
     <>
     <div className='d-flex'>    
     <Navbar />
-   <TimeLine/>
+    <Information/>
     </div>
 
         
     </>)
 }
-export default Home
+export default Profile

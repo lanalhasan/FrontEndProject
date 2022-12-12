@@ -4,14 +4,14 @@
     border: 1px solid #dadce0;
     font-family: poppins;
 }
-img {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 30px;
+.signupimg {
     width: 100px;
+    margin: auto;
+    margin-bottom: 30px;
 }
-.acc{
-    font-weight: bold;
+.createAcc{
+    font-weight:bolder ;
+}
+.signUpForm{
+    font-size: larger;
 }

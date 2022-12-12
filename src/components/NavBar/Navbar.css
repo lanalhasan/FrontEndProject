@@ -1,22 +1,25 @@
 .contents {
     text-decoration: none;
-    color: black;
-    margin-bottom: 3.15%;
+    color: rgb(41, 39, 39);
+    margin-left: -12px;
+    width:fit-content;
+    margin-top: -4.5px;
 } 
 span {
-    margin-left:1% ;
     font-size:16px;
-    font-weight: 400;
+    font-weight:lighter;
     font-family: poppins;
 }
-.img {
+.navimg{
     width: 60px;
     margin:21px 0px 30px 12px;
 }
-/* .contents:hover {
-    width: 10%;
-    height: 40px;
-    border-radius: 30px;
-    background-color: #F3F4F5;
+ .contents:hover {
+    background-color: #e9ecef;
+    color: #1d9bf0;
 }
- */
+.navs {
+    width: 270px;
+    height: 100vh;
+    border-right: #e9ecef solid 1px;   
+}

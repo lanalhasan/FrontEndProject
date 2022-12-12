@@ -1,0 +1,17 @@
+.info{
+    height: 100%;
+    width: 39%;
+    border-right: 1px solid #F3F4F5 ;
+    font-family: poppins;
+}
+.prof {
+    height: 50px;
+    border-bottom: 1px solid rgb(243, 244, 245);
+}
+.user {
+    border-bottom: 1px solid #f3f4f5
+}
+.star{
+    color: red;
+    display: inline;
+}

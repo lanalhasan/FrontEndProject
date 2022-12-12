@@ -1,0 +1,23 @@
+.content {
+    height: 100vh;
+    width: 39%;
+    border-right:1px solid #F3F4F5 ;
+    font-family: poppins;
+}
+.fixed-nav {
+    height: 50px;
+    border-bottom: 1px solid rgb(243, 244, 245);   
+}
+.txt{
+    border: 0;
+    height: 120px;
+    outline: none;
+    resize: none;
+}
+.pic{
+    height:40px;
+    width: 40px;
+}
+.box{
+    border-bottom: 6px solid rgb(243, 244, 245);
+}

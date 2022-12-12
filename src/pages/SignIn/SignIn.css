@@ -4,14 +4,14 @@
     border: 1px solid #dadce0;
     font-family: poppins;
 }
-img {
-    display: flex;
-    flex-direction: column;
+.signinimg {
     margin: auto;
-    margin-top: 5px;
     margin-bottom: 30px;
     width: 100px;
 }
-.acc{
-    font-weight: 900;
+.account{
+    font-weight: bolder;
+}
+.signInForm{
+    font-size: larger;
 }
