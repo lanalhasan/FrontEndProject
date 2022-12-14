@@ -1,4 +1,5 @@
 import Navbar from '../../components/NavBar/Navbar'
+import AllPosts from '../../components/Posts/Posts'
 import TimeLine from '../../components/TimeLine/Timeline'
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <div className='d-flex'>    
     <Navbar />
    <TimeLine/>
+   <AllPosts />
     </div>
 
         
