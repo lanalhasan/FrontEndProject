@@ -8,7 +8,6 @@ const Home = () => {
     <div className='d-flex'>    
     <Navbar />
    <TimeLine/>
-   <AllPosts />
     </div>
 
         

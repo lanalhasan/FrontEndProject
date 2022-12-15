@@ -1,0 +1,33 @@
+.Alpost{
+    border-bottom: 1px solid #f3f4f5;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+}
+
+.postBody {
+    display: flex;
+}
+.PostDetails{
+    display: flex;
+    overflow: hidden;
+}
+.postImg{
+    border-radius: 40px;
+    height: 40px;
+    margin-right: 0px;
+    width: 40px;
+}
+.PostName{
+font-weight: 600;
+    }
+ .PostDate{
+    font-size: 13px;
+    font-weight:100; 
+    opacity: 0.6; 
+    }
+.PostContent{
+    margin-bottom: 10px;
+    max-width: 100%;
+    overflow: hidden;
+}

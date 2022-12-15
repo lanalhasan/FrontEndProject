@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { HiHand } from "react-icons/hi";
 import { AuthContext } from "../../Contexts/AuthContext";
+import AllPosts from "../Posts/Posts";
 import "./Timeline.css";
 
 const TimeLine = ({ profile }) => {
@@ -46,6 +47,8 @@ const TimeLine = ({ profile }) => {
           </button>
         </div>
       </div>
+      <AllPosts />
+
     </div>
   );
 };

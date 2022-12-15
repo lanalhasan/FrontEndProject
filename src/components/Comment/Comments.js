@@ -8,10 +8,10 @@ const AllComments = ({postId}) => {
     const {token} = useContext(AuthContext)
     const [comments, setComments] = useState ([])
     const getAllComments = async () => {
-        const res = await fetch(process.env.REACT_APP_API +`/posts/${postId}`,{
-            method: "Get",
+        const res = await fetch(process.env.REACT_APP_API +`/comments/${postId}`,{
+            method: "post",
             headers: {
-            //   "Content-Type": "application/json",
+              "Content-Type": "application/json",
               Authorization : `Bearer ${token}`
             }
           })

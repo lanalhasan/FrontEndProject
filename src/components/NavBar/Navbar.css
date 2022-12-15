@@ -27,6 +27,6 @@ span {
 }
 .navs {
     width: 270px;
-    height: 100vh;
+    height: 100%;
     border-right: #e9ecef solid 1px;   
 }
