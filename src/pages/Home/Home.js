@@ -1,13 +1,15 @@
 import Navbar from '../../components/NavBar/Navbar'
-import AllPosts from '../../components/Posts/Posts'
+//import AllPosts from '../../components/Posts/Posts'
 import TimeLine from '../../components/TimeLine/Timeline'
+import React from 'react'
 
 const Home = () => {
+    const [getPosts, setGetPosts] = React.useState ([])
     return (
     <>
     <div className='d-flex'>    
     <Navbar />
-   <TimeLine/>
+   <TimeLine posts={getPosts} setPosts={setGetPosts}/>
     </div>
 
         

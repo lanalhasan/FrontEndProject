@@ -1,15 +1,15 @@
 import { useContext, useState } from "react"
 import { AuthContext } from "../../Contexts/AuthContext"
-import Post from "./Post"
+import CreatePost from "./CreatePost"
 import { useEffect } from "react"
-import { PostCtx } from "../../Contexts/PostContext"
+//import { PostCtx } from "../../Contexts/PostContext"
 
-const AllPosts = () => {
+const AllPosts = ({ allPosts, changePosts}) => {
     const {token} = useContext(AuthContext)
-   // const {postCon, setPostCon, addpost} =useContext(PostCtx)
-    const [getPosts, setGetPosts] = useState ([])
+    
+    const [page, setPage] = useState(1)
        const getAllPosts = async () => {
-        const res = await fetch(process.env.REACT_APP_API +"/posts",{
+        const res = await fetch(process.env.REACT_APP_API +`/posts?page=${page}`,{
             method: "get",
             headers: {
              "Content-Type": "application/json",
@@ -17,22 +17,24 @@ const AllPosts = () => {
             }
           })
           const json = await res.json();
-          console.log(json)
-          if(json.success) setGetPosts(json.data.data)
+          console.log(allPosts)
+          if(json.success) changePosts([...allPosts, ...json.data.data])
     } 
+
     useEffect(()=>{
         getAllPosts()
-    },[])
- console.log(getPosts)
+    },[page])
+
     return(
         <div id='posts'>
-            {getPosts?.length > 0 && (
+            {allPosts?.length > 0 && (
                 <ul style={{padding:'0px'}}>
-                    {getPosts?.map((post ,i) => (
-                        <Post key={i} data={post}/>
+                    {allPosts?.map((post ,i) => (
+                        <CreatePost key={i} data={post}/>
                     ))}
                 </ul>
             )}
+            <input type={'button'} value={'load more...'} onClick={() =>setPage(page + 1) }/>
         </div>
     )
 }

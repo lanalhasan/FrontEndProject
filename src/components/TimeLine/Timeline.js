@@ -1,13 +1,14 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { HiHand } from "react-icons/hi";
 import { AuthContext } from "../../Contexts/AuthContext";
-import AllPosts from "../Posts/Posts";
+import AllPosts from "../Posts/AllPosts";
 import "./Timeline.css";
 
-const TimeLine = ({ profile }) => {
+const TimeLine = ({ posts, setPosts, profile }) => {
   const { token } = useContext(AuthContext);
   const postContentRef = useRef();
-
+  const [newPost, setNewPost] = useState(null)
+  
   const CreatePost = async () => {
     const res = await fetch(process.env.REACT_APP_API + "/posts", {
       method: "Post",
@@ -21,6 +22,10 @@ const TimeLine = ({ profile }) => {
     });
     const json = await res.json();
     window.alert(json.messages);
+    if(json.success){
+      setPosts([json.data, ...posts])
+    }
+    postContentRef.current.value = ""
   };
   return (
     <div className="content d-block">
@@ -39,15 +44,16 @@ const TimeLine = ({ profile }) => {
             className="txt w-100"
             placeholder="What is happening?"
             name="content"
+          
           ></textarea>
           <button 
-          onClick={CreatePost}
+          onClick={() => CreatePost()}
          className="create btn btn-primary" type="submit">
             Create Post
           </button>
         </div>
       </div>
-      <AllPosts />
+      <AllPosts  allPosts={posts} changePosts={setPosts}/>
 
     </div>
   );

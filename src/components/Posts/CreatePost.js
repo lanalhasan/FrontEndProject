@@ -4,14 +4,14 @@ import UserManager, { AuthContext } from "../../Contexts/AuthContext";
 import relativeTime from "dayjs/plugin/relativeTime";
 import { BiComment } from "react-icons/bi";
 import { MdFavoriteBorder } from "react-icons/md";
-import AllComments from "../Comment/Comments";
+import AllComments from "../Comment/AllComments";
 import { Link } from "react-router-dom";
-import "./Post.css";
+import "./CreatePost.css";
 
-const Post = ({ data }) => {
+const CreatePost = ({ data }) => {
  // const handleClick = useContext (UserManager)
   const [showComment, setShowComment] = useState(false);
-  const [showLike, setShowLike] = useState(false);
+  //const [showLike, setShowLike] = useState(false);
   const {token} =useContext(AuthContext)
 
   const calcTime = (date) => {
@@ -49,25 +49,22 @@ const LikePost = (postId) => {
           <p className="PostContent mt-2 ms-5 mb-3" id="comment">
               {data?.content}
             </p>
-          <div className="d-flex align-items-center ms-5 mt-3 fs-5" id="icons">
+          <div className="d-flex align-items-center ms-5 mt-3  fs-4" id="icons">
             <div
-              className="theIcon me-2 rounded border bg-light py-0 px-3 d-flex align-items-center"
+              className="theIcon me-2 rounded border bg-light py-0 px-2 d-flex align-items-center"
               id="likeIcon"
             >
               <div id="like">
                 <Link
                   id="pressLike"
-                  onClick={()=>{
-                    
-                    (LikePost)}}
                 >
                   <MdFavoriteBorder fill={'black'}/>
                 </Link>
               </div>
-              <div className="ms-2 fw-bolder" id="count"></div>
+              <div className="ms-2 fw-bolder fs-6" id="count"> {data.likes_count}</div>
             </div>
             <div
-              className="theIcon border rounded border bg-light py-0 px-3 d-flex align-items-center"
+              className="theIcon border rounded border bg-light PY-0 px-2 d-flex align-items-center"
               id="commentIcon"
             >
               <div id="comment">
@@ -80,19 +77,22 @@ const LikePost = (postId) => {
                   <BiComment fill={'black'}/>
                 </Link>
               </div>
-              <div className="ms-2 fw-bolder" id="count"></div>
+              <div className=" ms-2 fw-bolder fs-6" id="count">{data.comments_count}</div>
             </div>
           </div>
         </div>
-      </div>
-      <div>
+        <div>
+        <div>
         {showComment && (
           <div>
             <AllComments postId={data.id} />
           </div>
         )}
       </div>
+          </div>
+      </div>
+     
     </>
   );
 };
-export default Post;
+export default CreatePost;

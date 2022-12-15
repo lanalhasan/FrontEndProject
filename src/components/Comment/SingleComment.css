@@ -8,10 +8,15 @@
     display: flex;
 }
 
-.CommentImg{
+.CommentName{
     font-weight: 600;
 }
 .completeComment{
     display: flex;
     margin-bottom: 8px;
+}
+.CommentDate{
+    font-size: 13px;
+    font-weight:100; 
+    opacity: 0.6; 
 }
