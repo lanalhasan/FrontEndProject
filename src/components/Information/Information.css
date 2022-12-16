@@ -1,7 +1,8 @@
 .info{
     height: 100%;
     width: 39%;
-    border-right: 1px solid #F3F4F5 ;
+    border-right:1px solid #F3F4F5 ;
+    border-left:1px solid #F3F4F5 ;
     font-family: poppins;
 }
 .prof {
@@ -15,3 +16,4 @@
     color: red;
     display: inline;
 }
+
