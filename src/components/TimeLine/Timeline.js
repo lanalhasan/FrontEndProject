@@ -5,7 +5,7 @@ import AllPosts from "../Posts/AllPosts";
 import "./Timeline.css";
 
 const TimeLine = ({ posts, setPosts, profile }) => {
-  const { token } = useContext(AuthContext);
+  const { token,user } = useContext(AuthContext);
   const postContentRef = useRef();
   const [newPost, setNewPost] = useState(null)
   
@@ -36,7 +36,7 @@ const TimeLine = ({ posts, setPosts, profile }) => {
       <div className="box d-flex pt-4 pb-2 px-2">
         <img
           className="pic align-middle me-3 rounded-circle"
-          src={profile?.avatar}
+          src={user?.avatar}
         />
         <div className="text-area d-flex flex-column align-items-end w-100">
           <textarea
