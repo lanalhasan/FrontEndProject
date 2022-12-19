@@ -1,5 +1,4 @@
 import Navbar from '../../components/NavBar/Navbar'
-//import AllPosts from '../../components/Posts/Posts'
 import TimeLine from '../../components/TimeLine/Timeline'
 import React from 'react'
 

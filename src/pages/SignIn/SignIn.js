@@ -25,7 +25,7 @@ const SignIn = () => {
     const json = await res.json();
     window.alert(json.messages)
     if  (json.success){
-        signIn(json.data, json.token);
+        signIn(json.data, json.token); //signIn function in Authcontext
         navigate('/')
     } 
     console.log(json);

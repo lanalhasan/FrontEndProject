@@ -2,7 +2,6 @@ import { useContext, useState } from "react"
 import { AuthContext } from "../../Contexts/AuthContext"
 import CreatePost from "./CreatePost"
 import { useEffect } from "react"
-//import { PostCtx } from "../../Contexts/PostContext"
 
 const AllPosts = ({ allPosts, changePosts}) => {
     const {token} = useContext(AuthContext)
@@ -17,7 +16,6 @@ const AllPosts = ({ allPosts, changePosts}) => {
             }
           })
           const json = await res.json();
-          console.log(allPosts)
           if(json.success) changePosts([...allPosts, ...json.data.data])
     } 
 
@@ -30,7 +28,7 @@ const AllPosts = ({ allPosts, changePosts}) => {
             {allPosts?.length > 0 && (
                 <ul style={{padding:'0px'}}>
                     {allPosts?.map((post ,i) => (
-                        <CreatePost key={i} data={post}/>
+                        <CreatePost key={i} data={post} setData= {changePosts}/>
                     ))}
                 </ul>
             )}

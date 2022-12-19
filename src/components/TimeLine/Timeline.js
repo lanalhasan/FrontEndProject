@@ -4,7 +4,7 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import AllPosts from "../Posts/AllPosts";
 import "./Timeline.css";
 
-const TimeLine = ({ posts, setPosts, profile }) => {
+const TimeLine = ({ posts, setPosts }) => {
   const { token,user } = useContext(AuthContext);
   const postContentRef = useRef();
   const [newPost, setNewPost] = useState(null)

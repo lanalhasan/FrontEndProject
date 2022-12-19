@@ -4,9 +4,9 @@ import { useEffect, useState } from "react"
 import SingleComment from "./SingleComment"
 import CreateComment from "./CreateComment"
 
-const AllComments = ({postId}) => {
+const AllComments = ({postId, data}) => {
     const {token} = useContext(AuthContext)
-    const [comments, setComments] = useState ([])
+    const [comments, setComments] = useState ([]) //saved all comments in this state
     const getAllComments = async () => {
         const res = await fetch(process.env.REACT_APP_API +`/posts/${postId}`,{
             method: "get",
@@ -27,11 +27,11 @@ const AllComments = ({postId}) => {
             {comments?.length > 0 && (
                 <ul>
                     {comments?.map((comment ,i) => (
-                        <SingleComment key={i} comments={comment}/>
+                        <SingleComment key={i} comments={comment} />
                     ))}
                 </ul>
             )}
-            <CreateComment postId = {postId} comments = {comments} setComments= {setComments}/>
+            <CreateComment postId = {postId} comments = {comments} setComments= {setComments} dataa={data}/>
         </div>
     )
 }

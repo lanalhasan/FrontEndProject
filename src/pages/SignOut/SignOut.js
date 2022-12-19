@@ -13,7 +13,7 @@ const SignOut =()=>{
         nav('/signin')
     },[])
     return(
-        <SignIn />
-    )
+        <></>
+        )
 }
 export default SignOut

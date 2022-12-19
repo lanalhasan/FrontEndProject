@@ -11,7 +11,7 @@ const SignUp = () => {
     password_confirmation: "",
   });
   const handleOnChange = (e) => {
-    data[e.target.id] = e.target.value;
+    data[e.target.id] = e.target.value; //to watch changes on data
   };
 
   const createUser = async (data) => {
@@ -27,7 +27,6 @@ const SignUp = () => {
     window.alert(json.messages)
     if (json.success)
     navigate('/signin')
-    console.log(json);
   };
 
   const handleSubmit = async (event) => {

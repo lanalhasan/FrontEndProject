@@ -5,17 +5,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import "./CreateComment.css";
 
-const CreateComment = ({ postId ,comments ,setComments}) => {
+const CreateComment = ({ postId ,comments ,setComments, dataa}) => {
   const { token } = useContext(AuthContext);
   const [comment, setComment] = useState("");
 
   const CreateTheComment = async (postId) => {
     const res = await fetch(process.env.REACT_APP_API + "/comments", {
       method: "Post",
-      body: JSON.stringify({
-        content: comment,
-        post_id: postId,
-      }),
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -26,15 +22,18 @@ const CreateComment = ({ postId ,comments ,setComments}) => {
       }),
     });
     const json = await res.json();
-    window.alert(json.messages);
     if (json.success) {
       const newComment = json.data
       const newComments = [...comments,newComment ]
       setComments(newComments)
+      setComment("")
+      /*   const newDataa = [dataa]
+        const i = newDataa.findIndex((item) => item.id == dataa.id);
+        newDataa[i].comments_count = String(
+          parseInt(newDataa[i].comments_count) + 1)  */
     }
-    setComment("")
+   
   };
-  console.log(comment);
   return (
     <div className="container-fluid addcomment" id="newComm">
       <div className="" id="coment">
