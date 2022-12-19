@@ -31,7 +31,7 @@ const AllComments = ({postId}) => {
                     ))}
                 </ul>
             )}
-            <CreateComment postId = {postId}/>
+            <CreateComment postId = {postId} comments = {comments} setComments= {setComments}/>
         </div>
     )
 }

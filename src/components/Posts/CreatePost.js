@@ -9,9 +9,7 @@ import { Link } from "react-router-dom";
 import "./CreatePost.css";
 
 const CreatePost = ({ data }) => {
- // const handleClick = useContext (UserManager)
   const [showComment, setShowComment] = useState(false);
-  //const [showLike, setShowLike] = useState(false);
   const {token} =useContext(AuthContext)
 
   const calcTime = (date) => {
