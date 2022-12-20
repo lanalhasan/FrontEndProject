@@ -6,8 +6,7 @@ import "./Timeline.css";
 
 const TimeLine = ({ posts, setPosts }) => {
   const { token,user } = useContext(AuthContext);
-  const postContentRef = useRef();
-  const [newPost, setNewPost] = useState(null)
+  const postContentRef = useRef();  
   
   const CreatePost = async () => {
     const res = await fetch(process.env.REACT_APP_API + "/posts", {
@@ -21,11 +20,12 @@ const TimeLine = ({ posts, setPosts }) => {
       },
     });
     const json = await res.json();
-    window.alert(json.messages);
     if(json.success){
+      alert(json.messages)
+    postContentRef.current.value = ""
+
       setPosts([json.data, ...posts])
     }
-    postContentRef.current.value = ""
   };
   return (
     <div className="content d-block">
@@ -33,7 +33,7 @@ const TimeLine = ({ posts, setPosts }) => {
         <h4 className="m-0 pt-1 px-3">Home</h4>
       </div>
 
-      <div className="box d-flex pt-4 pb-2 px-2">
+      <div className="box d-flex pt-2 pb-2 px-3">
         <img
           className="pic align-middle me-3 rounded-circle"
           src={user?.avatar}

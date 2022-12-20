@@ -14,7 +14,8 @@
 .ActiveLink:hover{
     background-color: #e9ecef;
     color: #1d9bf0;
-    
+    border-radius: 29px;
+    width:fit-content;
    
 }
 
@@ -34,5 +35,4 @@ span {
 .navs {
     width: 270px;
     height: 100%;
-/*     border-right: #e9ecef solid 1px;   
- */}
+}

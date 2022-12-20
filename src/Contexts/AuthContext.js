@@ -21,6 +21,7 @@ const UserManager = ({children}) => {
     return (
         <AuthContext.Provider value={{
             user,
+            setUser,
             token,
             signIn,
             signOut

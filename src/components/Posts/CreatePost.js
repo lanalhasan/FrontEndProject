@@ -8,7 +8,7 @@ import AllComments from "../Comment/AllComments";
 import { Link } from "react-router-dom";
 import "./CreatePost.css";
 
-const CreatePost = ({ data ,setData}) => {
+const CreatePost = ({ data , posts, setData}) => {
   const [showComment, setShowComment] = useState(false);
   const {token} =useContext(AuthContext)
 
@@ -16,21 +16,24 @@ const CreatePost = ({ data ,setData}) => {
     dayjs.extend(relativeTime);
     return dayjs(date).fromNow();
   };
-const LikePost = async  (postId) => {
-  const res =  fetch(process.env.REACT_APP_API +`/posts/${
-    data.liked_by_current_user ? "unlike" : "like"}`
+const LikePost = async  (post) => {
+  const res =  await fetch(process.env.REACT_APP_API +`/posts/${
+    post.liked_by_current_user ? "unlike" : "like"}`
     ,{
     method: "post",
     headers: {
       "Content-Type": "application/json",
       Authorization : `Bearer ${token}`
     },
-    body: JSON.stringify({ post_id: postId }),
+    body: JSON.stringify({ post_id: post.id }),
   })
   const json = await res.json();
   if (json.success) {
-   
-    
+    console.log(posts)
+    const newPosts = [...posts]
+    const index = newPosts.findIndex(item => item.id == json.data.id)
+    newPosts[index] = json.data
+    setData(newPosts)
   }
  
  
@@ -61,7 +64,7 @@ console.log(data)
               className="theIcon me-2 rounded border bg-light py-0 px-2 d-flex align-items-center"
               id="likeIcon"
             >
-              <div id="like" onClick={() => LikePost(data.id)}>
+              <div id="like" onClick={() => LikePost(data)}>
                 <Link
                   id="pressLike"
                 >
