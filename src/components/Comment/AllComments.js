@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import SingleComment from "./SingleComment"
 import CreateComment from "./CreateComment"
 
-const AllComments = ({postId, data}) => {
+const AllComments = ({postId, data , post ,allposts}) => {
     const {token} = useContext(AuthContext)
     const [comments, setComments] = useState ([]) //saved all comments in this state
     const getAllComments = async () => {
@@ -31,7 +31,7 @@ const AllComments = ({postId, data}) => {
                     ))}
                 </ul>
             )}
-            <CreateComment postId = {postId} comments = {comments} setComments= {setComments} dataa={data}/>
+            <CreateComment allposts={allposts} post={post} postId = {postId} comments = {comments} setComments= {setComments} dataa={data}/>
         </div>
     )
 }

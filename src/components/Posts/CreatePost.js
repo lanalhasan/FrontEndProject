@@ -95,7 +95,7 @@ console.log(data)
         <div>
         {showComment && (
           <div>
-            <AllComments postId={data.id} data ={data} />
+            <AllComments allposts={setData} post={posts} postId={data.id} data ={data} />
           </div>
         )}
       </div>

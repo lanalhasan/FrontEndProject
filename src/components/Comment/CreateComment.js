@@ -5,10 +5,10 @@ import { useContext } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import "./CreateComment.css";
 
-const CreateComment = ({ postId ,comments ,setComments, dataa}) => {
+const CreateComment = ({ postId ,comments ,setComments, dataa , post, allposts}) => {
   const { token } = useContext(AuthContext);
   const [comment, setComment] = useState("");
-
+console.log (post)
   const CreateTheComment = async (postId) => {
     const res = await fetch(process.env.REACT_APP_API + "/comments", {
       method: "Post",
@@ -22,10 +22,16 @@ const CreateComment = ({ postId ,comments ,setComments, dataa}) => {
       }),
     });
     const json = await res.json();
+    console.log(json)
     if (json.success) {
       const newComment = json.data
       const newComments = [...comments,newComment ]
+      console.log(newComments)
       setComments(newComments)
+      const NewInfo = [...post]
+      const index = NewInfo.findIndex(item => item.id == item.id)
+      NewInfo[index].comments_count = parseInt(newComments.length) + 0
+      allposts(NewInfo)
       setComment("")
       /*   const newDataa = [dataa]
         const i = newDataa.findIndex((item) => item.id == dataa.id);
