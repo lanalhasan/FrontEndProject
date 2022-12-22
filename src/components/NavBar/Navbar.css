@@ -36,3 +36,14 @@ span {
     width: 270px;
     height: 100%;
 }
+@media screen and (max-width: 992px){
+    .navs{
+        margin-left: 60px;
+        width: 260px;
+    }
+    }
+    @media screen and (max-width: 768px){
+        .navs {
+          display: none;
+      }
+      }

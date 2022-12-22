@@ -30,7 +30,7 @@ console.log (post)
       setComments(newComments)
       const NewInfo = [...post]
       const index = NewInfo.findIndex(item => item.id == item.id)
-      NewInfo[index].comments_count = parseInt(newComments.length) + 0
+      NewInfo[index].comments_count =String(parseInt(newComments.length))  //comment counts
       allposts(NewInfo)
       setComment("")
       /*   const newDataa = [dataa]

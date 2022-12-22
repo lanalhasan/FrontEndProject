@@ -1,6 +1,6 @@
 .info{
     height: 100%;
-    width: 39%;
+    width: 600px;
     border-right:1px solid #F3F4F5 ;
     border-left:1px solid #F3F4F5 ;
     font-family: poppins;
@@ -17,3 +17,29 @@
     display: inline;
 }
 
+.person-avatar label {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  .person-avatar input {
+    opacity: 0;
+    z-index: -5;
+  }
+  .person-avatar label .icon {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+  .person-avatar label:hover .icon {
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }

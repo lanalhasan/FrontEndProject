@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { HiHand } from "react-icons/hi";
 import { AuthContext } from "../../Contexts/AuthContext";
+import Head from "../Head/Head";
 import AllPosts from "../Posts/AllPosts";
 import "./Timeline.css";
 
@@ -29,9 +30,7 @@ const TimeLine = ({ posts, setPosts }) => {
   };
   return (
     <div className="content d-block">
-      <div className="fixed-nav  w-100 navbar sticky-top bg-light">
-        <h4 className="m-0 pt-1 px-3">Home</h4>
-      </div>
+      <Head page_name ="Home"/>
 
       <div className="box d-flex pt-2 pb-2 px-3">
         <img
